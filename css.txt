@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.message h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    color: #FFD700;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.balloons {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 80px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: red;
+    animation: float 5s ease-in-out infinite;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 150px;
+    background-color: #333;
+}
+
+.balloon.red {
+    background-color: red;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.balloon.blue {
+    background-color: blue;
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.balloon.green {
+    background-color: green;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-300px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
